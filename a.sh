@@ -1,6 +1,6 @@
 !#/usr/bin/env  bash
 echo "Install some component"
-apt install mc vim sudo minidlna vsftpd php python
+apt -y install mc vim sudo minidlna vsftpd php python
 echo "Add user to sudo group"
 echo "Enter user name who added to sudo group"
 read name
@@ -16,3 +16,8 @@ sudo systemctl start minidlna
 sudo systemctl status minidlna
 echo "Check if the port is listening..."
 sudo ss -4lnp | grep minidlna
+echo "==================================="
+echo "Save the original vsftpd.conf"
+cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
+vim /etc/vsftpd.conf
+write_enable-YES
