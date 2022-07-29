@@ -1,4 +1,5 @@
 #!/usr/bin/env  bash
+cp /etc/apt/sources.list /etc/apt/sources.list.org
 echo -e "Edit sources.list"
 sed -i "s|deb https://deb.debian.org/debian/ bullseye main non-free contrib|deb https://deb.debian.org/debian/ unstable main contrib non-free|"
 sed -i "s|deb-src https://deb.debian.org/debian/ bullseye main non-free contrib|deb-src https://deb.debian.org/debian/ unstable main contrib non-free|"
