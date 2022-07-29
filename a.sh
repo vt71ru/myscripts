@@ -1,6 +1,6 @@
 !#/usr/bin/env  bash
 echo "Install some component"
-apt -y install mc vim sudo minidlna vsftpd php python
+apt -y install mc vim sudo rxvt-unicode minidlna vsftpd php python
 echo "Add user to sudo group"
 echo "Enter user name who added to sudo group"
 read name
