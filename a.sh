@@ -1,6 +1,6 @@
 !#/usr/bin/env  bash
 echo "Install some component"
-apt -y install xserver-xorg-core xinit xserver-xorg-amdgpu xserver-xorg-input-evdev x11-xkb-utils x11-utils x11-xserver-utils xfonts-terminus mc 
+apt -y install gnupg2 xserver-xorg-core xinit xserver-xorg-amdgpu xserver-xorg-input-evdev x11-xkb-utils x11-utils x11-xserver-utils xfonts-terminus mc 
 apt -y install vim sudo rxvt-unicode minidlna vsftpd php python
 apt -y install i3 lightsdm slick-greeter lightdm-settings lxappearance nitrogen gvfs thunar ntfs-3g firefox firefox-l10n-ru alsa-tools alsa-utils arc-theme
 dpkg-reconfigure -plow console-setup
@@ -14,6 +14,12 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 apt-get update
 apt-get upgrade
 sudo systemctl enable lightdm
+echo "==================================="
+echo "mount NTFS directory"
+mkdir /mnt/LIB 
+chown -R $name:$name  /mnt/LIB
+vim /etc/fstab
+echo "==================================="
 echo "Save the original minidlna.conf"
 cp /etc/minidlna.conf /etc/minidlna.conf.orig
 echo "Set the path to the folder with your files"
@@ -25,11 +31,7 @@ sudo systemctl enable minidlna
 sudo systemctl status minidlna
 echo "Check if the port is listening..."
 sudo ss -4lnp | grep minidlna
-echo "==================================="
-echo "mount NTFS directory"
-mkdir /mnt/LIB 
-chown -R $name:$name  /mnt/LIB
-vim /etc/fstab
+
 echo "===================================="
 echo "Save the original vsftpd.conf"
 echo "Enter user name for work with FTP"
@@ -39,6 +41,7 @@ adduser $fname
 mkdir -p /home/$fname/ftp-dir
 chmod -R 750 /home/$fname/ftp-dir
 chown -R $fname:  /home/$fname/ftp-dir
+ln -s /home/$fname/ftp-dir/ /mnt/LIB
 
 echo $fname >> /etc/vsftpd.userlist
 cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
