@@ -1,0 +1,39 @@
+#------------------------------------------------------------------------------#
+#                   OFFICIAL DEBIAN REPOS                    
+#------------------------------------------------------------------------------#
+
+###### Debian Main Repos
+deb http://deb.debian.org/debian/ unstable main contrib non-free
+deb-src http://deb.debian.org/debian/ unstable main contrib non-free
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Adapta GTK Theme
+deb http://ppa.launchpad.net/tista/adapta/ubuntu bionic main
+deb-src http://ppa.launchpad.net/tista/adapta/ubuntu bionic main
+
+###Debian Multimedia
+deb [arch=amd64,i386] http://www.deb-multimedia.org sid main non-free
+
+###Google Chrome Browser
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+###MariaDB
+deb [arch=amd64,i386] http://mirror.23media.de/mariadb/repo/10.2/debian sid main
+deb-src [arch=amd64,i386] http://mirror.23media.de/mariadb/repo/10.2/debian sid main
+
+###PostgreSQL
+deb [arch=amd64,i386] http://apt.postgresql.org/pub/repos/apt/ sid-pgdg main
+
+###Sublime Text
+deb https://download.sublimetext.com/ apt/stable/
+
+###Vivaldi Browser
+deb [arch=i386,amd64] http://repo.vivaldi.com/stable/deb/ stable main
+
+###Wine
+deb [arch=i386] https://dl.winehq.org/wine-builds/debian/ sid main
+
