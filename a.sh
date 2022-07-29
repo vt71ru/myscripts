@@ -2,7 +2,8 @@
 echo "Install some component"
 apt -y install gnupg2 xserver-xorg-core xinit xserver-xorg-video-amdgpu xserver-xorg-input-evdev x11-xkb-utils x11-utils x11-xserver-utils xfonts-terminus mc 
 apt -y install vim sudo rxvt-unicode minidlna vsftpd php python3
-apt -y install i3 lightdm slick-greeter lightdm-settings lxappearance nitrogen gvfs thunar ntfs-3g firefox firefox-l10n-ru alsa-tools alsa-utils arc-theme
+apt -y install i3 lightdm slick-greeter lightdm-settings lxappearance nitrogen gvfs thunar ntfs-3g firefox firefox-l10n-ru alsa-tools alsa-utils arc-theme wireless-tools firmware-linux 
+systemctl enable lightdm.service
 dpkg-reconfigure -plow console-setup
 echo "Add user to sudo group"
 echo "Enter user name who added to sudo group"
